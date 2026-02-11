@@ -1,0 +1,352 @@
+WEBVTT
+
+00:00.480 --> 00:01.200
+Welcome back.
+
+00:01.520 --> 00:08.240
+In this video, I'm going to present you a demo and overview of the WhatsApp AI, customer support and
+
+00:08.240 --> 00:12.320
+low ticket sales agent and explain how it works node by node.
+
+00:12.720 --> 00:15.680
+And at the end, I've got a task for you.
+
+00:16.200 --> 00:22.440
+After watching the video, please download the workflow and try to connect all the credentials and modify
+
+00:22.440 --> 00:23.800
+this solution to your needs.
+
+00:24.040 --> 00:29.680
+If you have been following this course lesson by lesson, you should already have most of the required
+
+00:29.680 --> 00:39.160
+accounts connected like WhatsApp, OpenAI, or Google Drive, so you can simply click on a specific
+
+00:39.160 --> 00:45.920
+node and choose the account you want to connect, for example, Google Drive and so on.
+
+00:51.200 --> 00:57.840
+Now, just to remind you, you can manage all your credentials in this section for each project separately.
+
+00:58.640 --> 01:03.240
+So just go to credentials and you can manage all your accounts right here.
+
+01:04.770 --> 01:11.570
+However, as I mentioned in one of the previous lessons, some platforms like WhatsApp may require you
+
+01:11.570 --> 01:17.010
+to refresh your credentials from time to time and re-enter the API keys manually.
+
+01:17.170 --> 01:23.330
+Also, you have not used Google Gemini in any of the previous projects, so if you are stuck setting
+
+01:23.330 --> 01:30.450
+that up or need help connecting any platform, feel free to go to the dedicated section on setting up
+
+01:30.450 --> 01:31.330
+credentials.
+
+01:31.650 --> 01:37.970
+Next in this project, we'll be using Supabase vector database to give our WhatsApp agent long term
+
+01:37.970 --> 01:38.530
+memory.
+
+01:39.090 --> 01:44.370
+So to find out exactly how to use Supabase, configure everything and complete the setup.
+
+01:44.770 --> 01:50.290
+Please refer to the next lesson called How to Build an Agent That Remembers Everything.
+
+01:50.330 --> 01:52.970
+Where I will show you step by step how to do it.
+
+01:53.250 --> 01:54.690
+Alright, now it's your turn.
+
+01:55.210 --> 01:56.690
+Watch the rest of this video.
+
+01:57.370 --> 01:59.530
+Download and import the workflow.
+
+01:59.690 --> 02:03.650
+Connect all your accounts and make this WhatsApp agent your own.
+
+02:04.090 --> 02:06.490
+Alright guys, so let's do a quick demonstration.
+
+02:07.130 --> 02:16.260
+So I trained my WhatsApp I agent using my company's information like the services we offer using the
+
+02:16.260 --> 02:17.660
+first part of the workflow.
+
+02:19.140 --> 02:27.700
+So now when I click on the workflow, it's waiting for the trigger to fire in the second part of the
+
+02:27.700 --> 02:28.300
+workflow.
+
+02:29.220 --> 02:29.940
+With this one.
+
+02:34.420 --> 02:36.020
+So let's simulate a message.
+
+02:36.420 --> 02:41.820
+Imagine a client type something like what services do you offer?
+
+02:51.500 --> 02:52.740
+And as you can see.
+
+02:55.940 --> 02:57.300
+The workflow has been triggered.
+
+02:58.660 --> 03:04.060
+And now agent is working on a response to the user.
+
+03:07.700 --> 03:13.640
+And yeah adaptive AI offers a range of services designed to enhance business operations and customer
+
+03:13.640 --> 03:15.480
+engagement, including etc..
+
+03:17.800 --> 03:26.880
+So basically the agent created a response using the information stored in a base vector store.
+
+03:29.120 --> 03:36.160
+And this is where we pulled all the details from the word file that we pulled from Google Drive using
+
+03:36.160 --> 03:39.400
+the first part of the workflow.
+
+03:40.440 --> 03:46.920
+This one, and this is the fourth file in Google Drive.
+
+03:48.360 --> 03:48.560
+Okay.
+
+03:48.600 --> 03:51.600
+So now let's test the voice message feature.
+
+03:52.720 --> 03:54.520
+So click on the test workflow.
+
+03:57.320 --> 03:59.040
+And I'm going to ask the same question.
+
+03:59.480 --> 04:00.760
+What services do you offer.
+
+04:06.440 --> 04:10.080
+And we should receive similar response from our agent.
+
+04:20.730 --> 04:23.530
+It takes like ten, 15 seconds.
+
+04:25.930 --> 04:26.130
+Yeah.
+
+04:26.170 --> 04:29.610
+As you can see, adaptive AI provides a variety of services, including.
+
+04:30.290 --> 04:36.530
+In this video, I will walk you through how to set up a WhatsApp AI agent that's trained on your company's
+
+04:36.530 --> 04:39.290
+data and can retain conversation history.
+
+04:39.850 --> 04:44.490
+So you can set up, set this up for yourself, or even sell it for your clients.
+
+04:44.610 --> 04:51.050
+So this agent can handle text and voice messages and retrieve relevant information, and then reply
+
+04:51.090 --> 04:54.530
+naturally by keeping the context of the conversation.
+
+04:55.210 --> 04:56.410
+So let's get started.
+
+04:58.730 --> 05:02.250
+So this is the first part of the workflow.
+
+05:03.650 --> 05:09.210
+And the workflow starts with when clicking the test workflow node.
+
+05:09.890 --> 05:16.730
+And this is manual trigger that lets you test the setup by running the workflow on demand.
+
+05:18.130 --> 05:21.340
+Next we have uh, the Google Drive node.
+
+05:22.380 --> 05:26.500
+So this node downloads a file from a specific Google Drive folder.
+
+05:26.500 --> 05:31.500
+So you can select which document you want to process and store in the database.
+
+05:32.180 --> 05:39.540
+So this is where your company's documents, like PDFs or word files are retrieved for further processing.
+
+05:41.740 --> 05:42.140
+Um.
+
+05:44.820 --> 05:45.460
+Next.
+
+05:45.660 --> 05:51.940
+Once the file is retrieved, uh it's passed to Supabase vector store node.
+
+05:51.940 --> 05:56.620
+So here, uh, the queue is stored as part of your knowledge base.
+
+05:57.100 --> 06:03.380
+So this step ensures that the data is available for processing in the next steps.
+
+06:04.660 --> 06:12.940
+So after storing, uh, after storing the workflow moves to recursive characters.
+
+06:13.060 --> 06:15.380
+Uh splitter text splitter node.
+
+06:16.100 --> 06:18.860
+So this splits the document into smaller chunks.
+
+06:19.060 --> 06:26.550
+And splitting is crucial because AI models Perform better with smaller, structured, structured pieces
+
+06:26.550 --> 06:27.190
+of text.
+
+06:28.310 --> 06:33.350
+So next up the default data loader node.
+
+06:33.350 --> 06:39.790
+So it organizes the text chunks and ensures they're ready for embedding.
+
+06:39.790 --> 06:43.470
+So this step format the data for smooth processing.
+
+06:45.550 --> 06:50.310
+After formatting the chunks are passed to the embeddings OpenAI node.
+
+06:50.870 --> 07:00.070
+So this node generates a numerical embeddings for each chunk of text, making it easier to compare and
+
+07:00.070 --> 07:02.390
+retrieve relevant information later.
+
+07:03.470 --> 07:08.350
+And finally, the embeddings are sent back to the base vector store.
+
+07:09.270 --> 07:15.950
+So these embeddings are stored in the database and creates a searchable vector store.
+
+07:16.390 --> 07:23.430
+So this is essential for enabling enabling your AI to retrieve the right information when queried.
+
+07:26.910 --> 07:29.480
+So this is the second part of the workflow.
+
+07:30.360 --> 07:33.960
+So the workflow starts with the WhatsApp trigger node.
+
+07:35.000 --> 07:43.000
+This listens for incoming messages like texts or audio and from from your clients on WhatsApp.
+
+07:44.000 --> 07:44.640
+One.
+
+07:44.680 --> 07:50.080
+Once a message is received, it moves on to the next steps in the workflow.
+
+07:50.920 --> 07:55.080
+So the trigger connects to a split out message pass node.
+
+07:55.080 --> 08:00.960
+So this node checks whether the incoming messages, uh, is text or audio.
+
+08:01.960 --> 08:13.000
+So if the message is uh, an audio, uh, it's passed to the get audio URL and download uh audio nodes.
+
+08:13.640 --> 08:25.680
+So this nodes uh fetch and download the audio file file and then uh Google Gemini audio node uh processes
+
+08:25.680 --> 08:28.720
+it to transcribe the voice into text.
+
+08:29.720 --> 08:31.260
+So Transcription.
+
+08:31.300 --> 08:37.660
+Tenants voice messages into text so the AI can process them like regular text messages.
+
+08:39.940 --> 08:40.540
+Next.
+
+08:40.780 --> 08:47.060
+Once the message is transcribed, or if it's already text, it goes to the Getusers message node.
+
+08:47.420 --> 08:54.180
+And this node organizes and formats the message, pulling out important details like the type of message,
+
+08:54.180 --> 08:56.220
+the text content, and who sent it.
+
+08:56.820 --> 09:03.420
+So it extracts the sender's phone number and message text so they are ready to use in the next steps.
+
+09:04.540 --> 09:13.540
+So the information go to AI in this case is AI tools agent.
+
+09:14.420 --> 09:19.260
+So next the Postgres chat memory node comes into play.
+
+09:19.380 --> 09:26.020
+And this node lets the AI remember the conversation history, including previous messages and context
+
+09:26.340 --> 09:28.900
+like the client's name or earlier questions.
+
+09:29.340 --> 09:37.310
+So this basically this makes for follow up questions easy to handle without the client needing to repeat
+
+09:37.310 --> 09:37.950
+themselves.
+
+09:38.310 --> 09:40.830
+And it keeps the interaction feeling natural.
+
+09:41.630 --> 09:45.910
+So now we move to supervised vector store.
+
+09:46.510 --> 09:53.150
+Uh, this is where the agent searches your company's knowledge base to find the most relevant information.
+
+09:53.670 --> 09:57.150
+So it works with, uh, embeddings.
+
+09:57.270 --> 10:06.070
+OpenAI model, um, to match the client's questions, to stored knowledge and pull up the best possible
+
+10:06.070 --> 10:06.550
+answer.
+
+10:07.310 --> 10:13.870
+So after gathering all the data, the OpenAI chat model node, uh, generates response.
+
+10:13.910 --> 10:21.070
+Uh, it combines the client's question and the retrieved knowledge and the conversation history to create
+
+10:21.070 --> 10:22.830
+a helpful and natural reply.
+
+10:23.910 --> 10:28.950
+And the final step is to reply to the, uh, user node.
+
+10:30.590 --> 10:35.990
+This sends the response back to the client through WhatsApp.
